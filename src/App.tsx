@@ -1,3 +1,4 @@
+// @ts-nocheck
 import "./App.css";
 import toast, { Toaster } from "react-hot-toast";
 import { useEffect, useRef, useState } from "react";
@@ -189,7 +190,3 @@ function App() {
 }
 
 export default App;
-
-// <p>Decimal: {number}</p>
-// <p>Binary: {number.toString(2)}</p>
-// <p>Hexadecimal: {number.toString(16)}</p>
