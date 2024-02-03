@@ -78,6 +78,14 @@ input[type="number"] {
   font-size: 1.3rem;
 }
 
+.gh {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  width: 3rem;
+}
+
 @media (width < 800px) {
   form {
     flex-direction: column;

@@ -174,6 +174,16 @@ function App() {
         </p>
         <p>( {~~((points[0] / (points[0] + points[1])) * 100)}% )</p>
       </div>
+      <a
+        href="https://github.com/LeFede/coc-taller-conversiones"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          className="gh"
+          src="https://cdn-icons-png.flaticon.com/128/270/270798.png"
+        />
+      </a>
     </div>
   );
 }
