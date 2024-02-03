@@ -143,9 +143,6 @@ function App() {
   return (
     <div>
       <Toaster />
-      <p>Decimal: {number}</p>
-      <p>Binary: {number.toString(2)}</p>
-      <p>Hexadecimal: {number.toString(16)}</p>
       <form onSubmit={handleSubmit}>
         {fields.current.map((e, i) => {
           const show = i === shownNumber ? true : false;
@@ -193,3 +190,7 @@ function App() {
 }
 
 export default App;
+
+// <p>Decimal: {number}</p>
+// <p>Binary: {number.toString(2)}</p>
+// <p>Hexadecimal: {number.toString(16)}</p>
