@@ -84,6 +84,12 @@ input[type="number"] {
   bottom: 0;
   padding: 2rem;
   width: 3rem;
+  transition: 0.1s ease;
+}
+
+.gh:hover {
+  filter: drop-shadow(0.5px 0 1px white) drop-shadow(0 0.5px 1px white)
+    drop-shadow(-0.5px 0 1px white) drop-shadow(0 -0.5px 1px white);
 }
 
 @media (width < 800px) {
