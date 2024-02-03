@@ -158,6 +158,7 @@ function App() {
             name: e,
             value: show ? convertedNumbers[e] : inputs[e],
             onKeyDown: handleKeyDown,
+            required: true,
           };
 
           return (
@@ -167,7 +168,9 @@ function App() {
             </label>
           );
         })}
-        <input type="submit" value="go" />
+        <label className="mobile">
+          <input type="submit" value="Verificar" />
+        </label>
       </form>
       <div className="points">
         <p>
@@ -185,6 +188,9 @@ function App() {
           src="https://cdn-icons-png.flaticon.com/128/270/270798.png"
         />
       </a>
+      <span className="exp">
+        (Enter en cualquier campo para verificar resultado)
+      </span>
     </div>
   );
 }

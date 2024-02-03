@@ -48,15 +48,12 @@ input {
 form {
   display: flex;
   gap: 2rem;
+  align-items: flex-end;
 }
 
 label {
   display: flex;
   flex-direction: column;
-}
-
-input[type="submit"] {
-  display: none;
 }
 
 input[disabled] {
@@ -92,8 +89,38 @@ input[type="number"] {
     drop-shadow(-0.5px 0 1px white) drop-shadow(0 -0.5px 1px white);
 }
 
+input[type="submit"] {
+  display: none;
+}
+
+.mobile {
+  width: 100%;
+  display: none;
+}
+
+.exp {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
 @media (width < 800px) {
+  .exp {
+    display: none;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+  }
+
   form {
     flex-direction: column;
+  }
+
+  .mobile {
+    display: block;
   }
 }
