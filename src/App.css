@@ -43,6 +43,7 @@
 
 input {
   font-size: max(2vw, 1rem);
+  text-align: center;
 }
 
 form {

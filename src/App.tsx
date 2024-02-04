@@ -3,7 +3,18 @@ import "./App.css";
 import toast, { Toaster } from "react-hot-toast";
 import { useEffect, useRef, useState } from "react";
 
-const generateRandomNumber = (n) => Math.floor(Math.random() * Math.pow(2, n));
+const generateRandomNumber = (n) => {
+  let number;
+  const rand = Math.floor(Math.random() * 100);
+  if (rand < 30) number = Math.floor(Math.random() * Math.pow(2, n >> 2 || 1));
+  else if (rand < 60)
+    number = Math.floor(Math.random() * Math.pow(2, n >> 1 || 1));
+  else number = Math.floor(Math.random() * Math.pow(2, n));
+
+  if (number <= 60) number = generateRandomNumber(n);
+
+  return number;
+};
 const generateRandomIndex = (n) => Math.floor(Math.random() * n);
 const initialInputs = { dec: "", bin: "", hex: "" };
 
@@ -81,26 +92,6 @@ function App() {
       68: 1,
       69: 1,
       70: 1,
-      71: 1,
-      72: 1,
-      73: 1,
-      74: 1,
-      75: 1,
-      76: 1,
-      77: 1,
-      78: 1,
-      79: 1,
-      80: 1,
-      81: 1,
-      82: 1,
-      83: 1,
-      84: 1,
-      85: 1,
-      86: 1,
-      87: 1,
-      88: 1,
-      89: 1,
-      90: 1,
     };
 
     const allowed = {
@@ -152,13 +143,26 @@ function App() {
             hex: number.toString(16),
           };
 
+          const types = {
+            dec: "text",
+            bin: "text",
+            hex: "text",
+          };
+
+          const lengths = {
+            dec: "5",
+            bin: "16",
+            hex: "4",
+          };
+
           const attributes = {
-            type: e === "hex" ? "text" : "number",
+            type: types[e],
             disabled: show,
             name: e,
             value: show ? convertedNumbers[e] : inputs[e],
             onKeyDown: handleKeyDown,
             required: true,
+            maxlength: lengths[e],
           };
 
           return (
