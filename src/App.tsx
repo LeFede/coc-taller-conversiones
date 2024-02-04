@@ -4,12 +4,12 @@ import toast, { Toaster } from "react-hot-toast";
 import { useEffect, useRef, useState } from "react";
 
 const generateRandomNumber = (n) => {
-  let number;
+  let number = ~~(Math.random() * Math.pow(2, n));
   const rand = Math.floor(Math.random() * 100);
-  if (rand < 30) number = Math.floor(Math.random() * Math.pow(2, n >> 2 || 1));
-  else if (rand < 60)
-    number = Math.floor(Math.random() * Math.pow(2, n >> 1 || 1));
-  else number = Math.floor(Math.random() * Math.pow(2, n));
+
+  if (rand < 50) number = number >> 3;
+  else if (rand < 80) number = number >> 2;
+  else number;
 
   if (number <= 60) number = generateRandomNumber(n);
 
